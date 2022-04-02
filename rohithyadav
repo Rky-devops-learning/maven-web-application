@@ -1,4 +1,3 @@
-@ library('ladduyadav')
 node{
 echo "the node name is:${env.NODE_NAME}"
 echo "the build number is :${env.BUILD_NUMBER}"
@@ -11,7 +10,7 @@ git branch: 'development', credentialsId: '1c91e83b-c1c8-45b5-b33e-5dc19f97ba09'
 }
 //buildstage
 stage('build'){
-build('package')
+sh "$mavenHome/bin/mvn clean package"
 }
 /*
 //sonarQubereport
